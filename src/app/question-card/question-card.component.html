@@ -1,0 +1,43 @@
+<!-- Will keep this, displays all questions at once -->
+
+<!-- <form *ngFor="let question of allQuestions; let i = index" class="card-container">
+    <div class="question-container">
+
+        <div class="question-text">
+            {{question.question}}
+        </div>
+
+        <div class="answers">
+
+            <div *ngFor="let choice of question.allAnswers" class="radio-choices">
+
+                <input type="radio" id="{{choice}}" name="{{i}}" value="{{choice}}">
+                <label for="{{choice}}">{{choice}}</label>
+
+            </div>
+
+        </div>
+        <button (click)="next()" type="button">Submit</button>
+    </div> -->
+<!-- </form> -->
+
+<form [formGroup]="questionForm" *ngIf="quizMode" class="card-container" (ngSubmit)="next()">
+    <div class="question-container">
+
+        <div class="question-text">
+            {{allQuestions[n]?.question}}
+        </div>
+
+        <div class="answers">
+
+            <div *ngFor="let choice of allQuestions[n]?.allAnswers" class="radio-choices">
+
+                <input formControlName="answers" type="radio" id="{{choice}}" value="{{choice}}">
+                <label for="{{choice}}">{{choice}}</label>
+
+            </div>
+
+        </div>
+        <button class="button-next" [disabled]="questionForm.invalid" type="submit">Next !</button>
+    </div>
+</form>

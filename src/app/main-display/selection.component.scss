@@ -1,0 +1,88 @@
+
+.test-selection-container{
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.452);
+    
+    background: linear-gradient(212deg, rgba(255, 255, 255, 0.1) 0%, rgba(55, 67, 172, 0.4) 48%, rgba(255, 255, 255, 0.1) 100%);
+
+    .choices-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.815);
+
+
+        .sub-heading {
+            border-bottom: 2px solid black;
+            padding: 0 20px 5px 20px ;
+            margin: 0 0 7px 0;
+        }
+
+        hr {
+            border: 1px solid black;
+            outline: none;
+            margin: 3px;
+        }
+
+        .form-control-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+
+            .radio-wrap {
+                display: flex;
+                align-items: center;
+                margin: 0px 10px 0px 10px;
+                padding: 0px 5px 0px 5px;
+            }
+
+        }
+
+        .category-choices{
+            height: 25px;
+            align-self: center;
+            border: none;
+            margin: 8px;
+            padding: 4px;
+            border-radius: 5px;
+            outline: none;
+            
+        }
+    }
+
+    .submit-btn {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px 60px;
+        margin: 5px 5px;
+        border-radius: 5%;
+        outline: none;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        transition: all 0.4s;
+
+        &:hover {
+            transition: all 0.4s;
+            border: 2px solid white;
+            color: white;
+        }
+    }
+
+}
+
+.score-counter {
+    position: absolute;
+    margin: auto;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.712);
+}

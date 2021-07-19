@@ -1,0 +1,70 @@
+<div *ngIf="!quizMode" class="test-selection-container">
+    <form [formGroup]="selectionForm" (ngSubmit)="getData()">
+        <div class="choices-wrapper">
+
+            <div class="sub-heading">Choose category of tests</div>
+
+            <div class="form-control-container">
+                <select class="category-choices" formControlName="category" name="category" id="category">
+                    <option *ngFor="let category of categoriesArr" value="{{category}}">{{category}}</option>
+                </select>
+            </div>
+
+            <div class="sub-heading">Choose difficulty</div>
+
+            <div class="difficulty-choices form-control-container">
+                <div class="radio-wrap">
+
+                    <input formControlName="difficulty" type="radio" id="mixedDifficulty" name="difficulty" value="">
+                    <label for="mixedDifficulty">Mixed</label>
+                </div>
+
+                <div class="radio-wrap">
+
+                    <input formControlName="difficulty" type="radio" id="easy" name="difficulty" value="easy">
+                    <label for="easy">Easy</label>
+                </div>
+                <div class="radio-wrap">
+
+                    <input formControlName="difficulty" type="radio" id="Medium" name="difficulty" value="medium">
+                    <label for="Medium">Medium</label>
+                </div>
+
+                <div class="radio-wrap">
+
+                    <input formControlName="difficulty" type="radio" id="Hard" name="difficulty" value="hard">
+                    <label for="Hard">Hard</label>
+                </div>
+
+            </div>
+            <div class="sub-heading">Choose type of tests</div>
+            <div class="form-control-container">
+                <div class="radio-wrap">
+
+                    <input formControlName="questionType" type="radio" id="mixedType" name="questionType" value="">
+                    <label for="mixedType">Mixed</label>
+                </div>
+
+                <div class="radio-wrap">
+
+                    <input formControlName="questionType" type="radio" id="multiple" name="questionType"
+                        value="multiple">
+                    <label for="multiple">Multiple Choice</label>
+                </div>
+
+                <div class="radio-wrap">
+
+                    <input formControlName="questionType" type="radio" id="boolean" name="questionType" value="boolean">
+                    <label for="boolean">True / False</label>
+                </div>
+
+            </div>
+            <div>
+
+            </div>
+            <button class="submit-btn" type="submit">Load Tests!</button>
+        </div>
+    </form>
+</div>
+
+<div class="score-counter" *ngIf="scoreToShow">Your Score Is {{scoreToShow}}/10 </div>
